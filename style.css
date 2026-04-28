@@ -513,7 +513,7 @@ tr:hover td {
 
 .usp-img {
   width: 100%;
-  height: 250px;
+  aspect-ratio: 5 / 4;
   object-fit: cover;
   border-bottom: var(--brutal-border);
   background: var(--black);
@@ -907,7 +907,7 @@ footer {
   }
 
   .usp-img {
-    height: 180px;
+    height: auto;
   }
 
   .info-card {
