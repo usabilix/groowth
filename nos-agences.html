@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Agences - 2MARS Exchange</title>
+    <meta name="description" content="Découvrez nos 3 agences de change à Casablanca : 2 Mars, Goulmima et Taddart. Service de change rapide et sécurisé.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="header">
+        <div class="container nav-container">
+            <div class="logo-container">
+                <a href="index.html"><img src="Assets/Logo.svg" alt="2MARS Exchange Logo"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav_home">Accueil</a>
+                <a href="index.html#simulateur" data-i18n="nav_simulator">Simulateur</a>
+                <a href="index.html#taux" data-i18n="nav_rates">Taux de change</a>
+                
+                <div class="dropdown">
+                    <button class="dropbtn"><span data-i18n="nav_services">Services</span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="dropdown-content">
+                        <a href="dotation-ir.html" data-i18n="nav_dotation">Dotation IR</a>
+                        <a href="consultation.html" data-i18n="nav_consultation">Consultation Dotation</a>
+                        <a href="reservation.html" data-i18n="nav_reservation">Réservation de devises</a>
+                    </div>
+                </div>
+
+                <a href="index.html#avantages" data-i18n="nav_advantages">Avantages</a>
+                <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
+                <div class="lang-switch">
+                    <button class="active" onclick="setLang('fr')">FR</button>
+                    <button onclick="setLang('en')">EN</button>
+                </div>
+            </nav>
+            <div class="nav-actions">
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="brutalist-title" data-i18n="agences_title">Nos Agences</h1>
+                <p class="brutalist-subtitle" data-i18n="agences_hero_desc">Retrouvez-nous dans nos 3 points de vente stratégiques à Casablanca pour tous vos besoins en devises.</p>
+            </div>
+        </section>
+
+        <section class="agences-grid">
+            <div class="container">
+                <div class="grid-3">
+                    <!-- Agence 2 Mars -->
+                    <div class="brutalist-card">
+                        <div class="card-content" style="text-align: left;">
+                            <h3 style="margin-bottom: 1rem; color: var(--green);" data-i18n="agence_2mars_title">Agence 2 Mars</h3>
+                            <p style="margin-bottom: 1rem;"><strong data-i18n="agence_2mars_desc">Siège Social</strong></p>
+                            <p class="agence-address">130 Avenue 2 Mars, Quartier des Hôpitaux, Magasin 2, Casablanca 20250</p>
+                            <div class="map-container" style="height: 250px; background: #eee; border: 3px solid var(--black); margin-bottom: 1.5rem; border-radius: 4px; overflow: hidden;">
+                                <iframe src="https://maps.google.com/maps?q=Change%202Mars%20Exchange%20Casablanca&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <a href="https://maps.app.goo.gl/7TmA2mo17qUAzKdv9" target="_blank" class="btn btn-outline" style="width: 100%;" data-i18n="agence_btn_maps">Itinéraire Google Maps</a>
+                        </div>
+                    </div>
+
+                    <!-- Agence Goulmima -->
+                    <div class="brutalist-card">
+                        <div class="card-content" style="text-align: left;">
+                            <h3 style="margin-bottom: 1rem; color: var(--green);" data-i18n="agence_goulmima_title">Agence Goulmima</h3>
+                            <p style="margin-bottom: 1rem;"><strong data-i18n="agence_goulmima_desc">Quartier Bourgogne</strong></p>
+                            <p class="agence-address">550 Rue de Goulmima, Casablanca 20040</p>
+                            <div class="map-container" style="height: 250px; background: #eee; border: 3px solid var(--black); margin-bottom: 1.5rem; border-radius: 4px; overflow: hidden;">
+                                <iframe src="https://maps.google.com/maps?q=Change%20Goulmima%20Exchange%20Casablanca&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <a href="https://maps.app.goo.gl/47FmiscoKNd5iLx6A" target="_blank" class="btn btn-outline" style="width: 100%;" data-i18n="agence_btn_maps">Itinéraire Google Maps</a>
+                        </div>
+                    </div>
+
+                    <!-- Agence Taddart -->
+                    <div class="brutalist-card">
+                        <div class="card-content" style="text-align: left;">
+                            <h3 style="margin-bottom: 1rem; color: var(--green);" data-i18n="agence_taddart_title">Agence Taddart</h3>
+                            <p style="margin-bottom: 1rem;"><strong data-i18n="agence_taddart_desc">Quartier Taddart</strong></p>
+                            <p class="agence-address">5, Boulevard El Hachimi El Filali (Route de Taddart), Casablanca 20250</p>
+                            <div class="map-container" style="height: 250px; background: #eee; border: 3px solid var(--black); margin-bottom: 1.5rem; border-radius: 4px; overflow: hidden;">
+                                <iframe src="https://maps.google.com/maps?q=Currency%20Exchange%20Taddart%20Casablanca&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <a href="https://maps.app.goo.gl/PLPJYEHhfS62GYF68" target="_blank" class="btn btn-outline" style="width: 100%;" data-i18n="agence_btn_maps">Itinéraire Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" style="padding: 4rem 0; background: var(--black); color: var(--white); text-align: center;">
+            <div class="container">
+                <h2 style="margin-bottom: 1.5rem;" data-i18n="cta_agences_title">Besoin d'un renseignement ?</h2>
+                <p style="margin-bottom: 2rem; opacity: 0.8;" data-i18n="cta_agences_desc">Contactez notre agence centrale par téléphone ou WhatsApp pour connaître nos taux en temps réel.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; align-items: stretch;">
+                    <a href="tel:0770181818" class="btn btn-primary" style="height: auto; min-width: 250px;" data-i18n="cta_btn_call">Appeler le 07 70 18 18 18</a>
+                    <a href="https://wa.me/212770181818" class="btn btn-outline" style="border-color: var(--white); color: var(--white); height: auto; min-width: 250px;" data-i18n="cta_btn_wa">Contact WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="Assets/Logo.svg" alt="2MARS Exchange" class="footer-logo">
+                    <p style="font-size: 1rem;">Bureau de change agréé par Bank Al-Maghrib. Service rapide, fiable et digital.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/change.2mars/" target="_blank" class="social-icon" aria-label="Instagram">
+                            <img src="Assets/instagram-logo.svg" alt="Instagram">
+                        </a>
+                        <a href="https://www.facebook.com/change2mars/" target="_blank" class="social-icon" aria-label="Facebook">
+                            <img src="Assets/facebook-logo.svg" alt="Facebook">
+                        </a>
+                        <a href="https://wa.me/212770181818" target="_blank" class="social-icon" aria-label="Whatsapp">
+                            <img src="Assets/whatsapp-logo.svg" alt="Whatsapp">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <a href="index.html">Accueil</a>
+                    <a href="nos-agences.html">Nos agences</a>
+                    <a href="dotation-ir.html">Dotation IR</a>
+                    <a href="consultation.html">Consultation Dotation</a>
+                    <a href="reservation.html">Réservation de devises</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0.5rem;">07 70 18 18 18</p>
+                    <p style="font-size: 1rem; margin-bottom: 0.5rem;">contact@bureaudechangecasa.com</p>
+                    <p style="font-size: 1rem;">130 Av. 2 Mars, Casablanca</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 2MARS Exchange. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

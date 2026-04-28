@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dotation IR - 2MARS Exchange</title>
+    <meta name="description" content="Dotation touristique supplémentaire indexée sur l’IR. Découvrez comment demander ce complément de dotation chez 2MARS Exchange à Casablanca.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .dotation-hero {
+            padding: 6rem 0;
+            background-color: var(--blue);
+            color: var(--white);
+            border-bottom: var(--brutal-border);
+        }
+        .dotation-hero h1 {
+            background-color: var(--white);
+            color: var(--black);
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border: var(--brutal-border);
+            box-shadow: 4px 4px 0 var(--black);
+        }
+        .dotation-content {
+            padding: 4rem 0;
+            background-color: var(--bg-color);
+        }
+        .step-card {
+            background: var(--white);
+            border: var(--brutal-border);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 4px 4px 0 var(--black);
+        }
+        .step-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+        .step-card svg {
+            color: var(--black);
+        }
+        .warning-card {
+            background: #fef08a; /* yellow */
+            border: var(--brutal-border);
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 4px 4px 0 var(--black);
+        }
+        .special-case-card {
+            background: var(--black);
+            color: var(--white);
+            border: var(--brutal-border);
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 4px 4px 0 var(--white);
+        }
+        .special-case-card h3 {
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="container nav-container">
+            <div class="logo-container">
+                <a href="index.html"><img src="Assets/Logo.svg" alt="2MARS Exchange Logo"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#accueil" data-i18n="nav_home">Accueil</a>
+                <a href="index.html#simulateur" data-i18n="nav_simulator">Simulateur</a>
+                <a href="index.html#taux" data-i18n="nav_rates">Taux de change</a>
+                
+                <div class="dropdown">
+                    <button class="dropbtn" style="border-bottom: 4px solid var(--blue);"><span data-i18n="nav_services">Services</span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="dropdown-content">
+                        <a href="dotation-ir.html" data-i18n="nav_dotation">Dotation IR</a>
+                        <a href="consultation.html" data-i18n="nav_consultation">Consultation Dotation</a>
+                        <a href="reservation.html" data-i18n="nav_reservation">Réservation de devises</a>
+                    </div>
+                </div>
+
+                <a href="index.html#avantages" data-i18n="nav_advantages">Avantages</a>
+                <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
+                <div class="lang-switch">
+                    <button class="active" onclick="setLang('fr')">FR</button>
+                    <button onclick="setLang('en')">EN</button>
+                </div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="dotation-hero">
+            <div class="container">
+                <h1 data-i18n="dot_title">Dotation touristique supplémentaire indexée sur l’IR</h1>
+                <p style="font-size: 1.25rem; font-weight: 600; margin-top: 2rem; max-width: 800px;" data-i18n="dot_intro">
+                    Obtenez facilement votre dotation touristique supplémentaire indexée sur l’Impôt sur le Revenu (IR) grâce au service en ligne dédié.
+                    Le service « Dotation Touristique Supplémentaire – DTS » vous permet de demander ce complément de dotation en quelques étapes simples, sans complexité administrative.
+                </p>
+                <div style="margin-top: 2rem;">
+                    <a href="https://www.oc.gov.ma/sites/default/files/documents/Guide%20DTS/Guide%20Service%20en%20ligne%20%20DTS%20grand%20public.pdf" target="_blank" class="btn btn-primary" style="background: var(--white); color: var(--black);" data-i18n="dot_guide_link">👉 Guide pratique de la dotation touristique</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="dotation-content">
+            <div class="container">
+                <h2 style="margin-bottom: 3rem;" data-i18n="dot_how_title">🧭 Comment utiliser le service ?</h2>
+
+                <div class="step-card">
+                    <h3 data-i18n="dot_step1_title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        1. Connexion à la plateforme
+                    </h3>
+                    <p data-i18n="dot_step1_desc">Connectez-vous à la plateforme de l’Office des changes et remplissez le formulaire en ligne. Un code unique de demande sera généré automatiquement.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3 data-i18n="dot_step2_title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        2. Validation en agence
+                    </h3>
+                    <p data-i18n="dot_step2_desc">Rendez-vous dans un guichet de change muni de :</p>
+                    <ul style="list-style: square; padding-left: 2rem; font-weight: 600; margin-bottom: 1rem;">
+                        <li data-i18n="dot_step2_list1" style="margin-bottom: 0.5rem;">votre récépissé de demande</li>
+                        <li data-i18n="dot_step2_list2">une copie de votre pièce d’identité</li>
+                    </ul>
+                    <p data-i18n="dot_step2_footer">Cette étape permet l’activation de votre droit à la dotation.</p>
+                </div>
+
+                <div class="step-card" style="background: var(--green); color: var(--white);">
+                    <h3 style="color: var(--black);" data-i18n="dot_step3_title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        Accès au service
+                    </h3>
+                    <p data-i18n="dot_step3_desc" style="color: var(--white);">Cliquez ici pour accéder au service :</p>
+                    <a href="https://dts.oc.gov.ma/SGD_IR/" target="_blank" class="btn" style="margin-top: 1rem; border: 2px solid var(--black); box-shadow: 4px 4px 0 var(--black);" data-i18n="dot_step3_btn">Accéder à la dotation touristique DTS</a>
+                </div>
+
+                <div class="warning-card">
+                    <h3 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;" data-i18n="dot_warn_title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        ⚠️ Important à savoir
+                    </h3>
+                    <ul style="list-style: square; padding-left: 2rem; font-weight: 600;">
+                        <li data-i18n="dot_warn_1" style="margin-bottom: 0.5rem;">Votre validation est obligatoire avant la confirmation du montant du supplément dans le SGD.</li>
+                        <li data-i18n="dot_warn_2">Une fois validé, le montant devient définitif pour l’année en cours et ne peut plus être modifié ou annulé.</li>
+                    </ul>
+                </div>
+
+                <div class="special-case-card">
+                    <h3 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;" data-i18n="dot_special_title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        📄 Cas particulier
+                    </h3>
+                    <p data-i18n="dot_special_desc1" style="color: #cbd5e1;">Si vous disposez d’une attestation officielle délivrée par une administration marocaine justifiant le montant de l’IR payé pour l’année précédente, vous pouvez vous présenter directement au bureau de change.</p>
+                    <p data-i18n="dot_special_desc2" style="color: #cbd5e1; margin-top: 1rem;">Dans ce cas, le calcul de votre dotation supplémentaire sera effectué sur place, sur présentation de ce document.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="Assets/Logo.svg" alt="2MARS Exchange" class="footer-logo">
+                    <p style="font-size: 1rem;">Bureau de change agréé par Bank Al-Maghrib. Service rapide, fiable et digital.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/change.2mars/" target="_blank" class="social-icon" aria-label="Instagram">
+                            <img src="Assets/instagram-logo.svg" alt="Instagram">
+                        </a>
+                        <a href="https://www.facebook.com/change2mars/" target="_blank" class="social-icon" aria-label="Facebook">
+                            <img src="Assets/facebook-logo.svg" alt="Facebook">
+                        </a>
+                        <a href="https://wa.me/212770181818" target="_blank" class="social-icon" aria-label="Whatsapp">
+                            <img src="Assets/whatsapp-logo.svg" alt="Whatsapp">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens Rapides</h4>
+                    <a href="index.html">Accueil</a>
+                    <a href="nos-agences.html">Nos agences</a>
+                    <a href="index.html#simulateur">Simulateur</a>
+                    <a href="index.html#taux">Taux de change</a>
+                    <a href="dotation-ir.html">Dotation IR</a>
+                    <a href="consultation.html">Consultation Dotation</a>
+                    <a href="reservation.html">Réservation de devises</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0.5rem;">07 70 18 18 18</p>
+                    <p style="font-size: 1rem; margin-bottom: 0.5rem;">contact@bureaudechangecasa.com</p>
+                    <p style="font-size: 1rem;">130 Av. 2 Mars, Casablanca</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 2MARS Exchange. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

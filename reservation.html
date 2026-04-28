@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation de devises - 2MARS Exchange</title>
+    <meta name="description" content="Réservez vos devises en ligne chez 2MARS Exchange.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .res-hero {
+            padding: 6rem 0 3rem;
+            background-color: var(--blue);
+            color: var(--white);
+            border-bottom: var(--brutal-border);
+        }
+        .res-hero h1 {
+            background-color: var(--white);
+            color: var(--black);
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border: var(--brutal-border);
+            box-shadow: 4px 4px 0 var(--black);
+        }
+        .res-content {
+            padding: 4rem 0;
+            background-color: var(--bg-color);
+        }
+        .res-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 800px;
+            margin: 0 auto;
+            gap: 2rem;
+        }
+        .form-card {
+            background: var(--white);
+            border: var(--brutal-border);
+            padding: 2.5rem;
+            box-shadow: 6px 6px 0 var(--black);
+        }
+        .form-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--blue);
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--black);
+            padding-bottom: 1rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            font-family: inherit;
+            border: 2px solid var(--black);
+            outline: none;
+            background: var(--bg-color);
+            transition: all 0.2s ease;
+        }
+        .form-group input:focus, .form-group select:focus {
+            box-shadow: 4px 4px 0 var(--black);
+            transform: translate(-2px, -2px);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .res-hero {
+                padding: 3rem 0 !important;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="container nav-container">
+            <div class="logo-container">
+                <a href="index.html"><img src="Assets/Logo.svg" alt="2MARS Exchange Logo"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#accueil" data-i18n="nav_home">Accueil</a>
+                <a href="index.html#simulateur" data-i18n="nav_simulator">Simulateur</a>
+                <a href="index.html#taux" data-i18n="nav_rates">Taux de change</a>
+                
+                <div class="dropdown">
+                    <button class="dropbtn" style="border-bottom: 4px solid var(--blue);"><span data-i18n="nav_services">Services</span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="dropdown-content">
+                        <a href="dotation-ir.html" data-i18n="nav_dotation">Dotation IR</a>
+                        <a href="consultation.html" data-i18n="nav_consultation">Consultation Dotation</a>
+                        <a href="reservation.html" data-i18n="nav_reservation">Réservation de devises</a>
+                    </div>
+                </div>
+
+                <a href="index.html#avantages" data-i18n="nav_advantages">Avantages</a>
+                <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
+                <div class="lang-switch">
+                    <button class="active" onclick="setLang('fr')">FR</button>
+                    <button onclick="setLang('en')">EN</button>
+                </div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="res-hero">
+            <div class="container">
+                <h1 data-i18n="res_title">Réservez vos devises</h1>
+                <p style="font-size: 1.25rem; font-weight: 600; margin-top: 2rem; max-width: 800px;" data-i18n="res_intro">
+                    Effectuez votre demande de réservation de devises en ligne en quelques étapes simples.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="res-content">
+            <div class="container res-grid">
+                <div class="form-card">
+                    <h3 data-i18n="res_req_title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path d="M14 3v5h5M16 13H8M16 17H8M10 9H8"/></svg>
+                        🧾 Informations requises
+                    </h3>
+                    <form onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label data-i18n="res_form_name">Nom complet*</label>
+                            <input type="text" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="res_form_email">Adresse e-mail*</label>
+                                <input type="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="res_form_phone">Numéro de téléphone*</label>
+                                <input type="tel" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="res_form_amount">Montant souhaité*</label>
+                                <input type="number" value="100" min="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="res_form_currency">Devise* (ex : EUR)</label>
+                                <select required id="reservation-currency">
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="USD">USD - Dollar Américain</option>
+                                    <option value="CAD">CAD - Dollar Canadien</option>
+                                    <option value="GBP">GBP - Livre Sterling</option>
+                                    <option value="CHF">CHF - Franc Suisse</option>
+                                    <option value="SAR">SAR - Riyal Saoudien</option>
+                                    <option value="AED">AED - Dirham Émirati</option>
+                                    <option value="KWD">KWD - Dinar Koweïtien</option>
+                                    <option value="BHD">BHD - Dinar Bahreïni</option>
+                                    <option value="QAR">QAR - Riyal Qatari</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-i18n="res_form_date">Date de réservation*</label>
+                            <input type="date" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border: 2px solid var(--black); font-size: 1.25rem; margin-top: 1rem;" data-i18n="res_form_btn">Réserver mes devises</button>
+                    </form>
+                    <p style="margin-top: 1.5rem; font-weight: 600; font-size: 0.95rem; text-align: center; color: var(--green);" data-i18n="res_form_footer">
+                        Traitement rapide de votre demande selon disponibilité des devises
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="Assets/Logo.svg" alt="2MARS Exchange" class="footer-logo">
+                    <p style="font-size: 1rem;">Bureau de change agréé par Bank Al-Maghrib. Service rapide, fiable et digital.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/change.2mars/" target="_blank" class="social-icon" aria-label="Instagram">
+                            <img src="Assets/instagram-logo.svg" alt="Instagram">
+                        </a>
+                        <a href="https://www.facebook.com/change2mars/" target="_blank" class="social-icon" aria-label="Facebook">
+                            <img src="Assets/facebook-logo.svg" alt="Facebook">
+                        </a>
+                        <a href="https://wa.me/212770181818" target="_blank" class="social-icon" aria-label="Whatsapp">
+                            <img src="Assets/whatsapp-logo.svg" alt="Whatsapp">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens Rapides</h4>
+                    <a href="index.html">Accueil</a>
+                    <a href="nos-agences.html">Nos agences</a>
+                    <a href="index.html#simulateur">Simulateur</a>
+                    <a href="index.html#taux">Taux de change</a>
+                    <a href="dotation-ir.html">Dotation IR</a>
+                    <a href="consultation.html">Consultation Dotation</a>
+                    <a href="reservation.html">Réservation de devises</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0.5rem;">07 70 18 18 18</p>
+                    <p style="font-size: 1rem; margin-bottom: 0.5rem;">contact@bureaudechangecasa.com</p>
+                    <p style="font-size: 1rem;">130 Av. 2 Mars, Casablanca</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 2MARS Exchange. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Populate reservation currencies based on ratesData if available
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof ratesData !== 'undefined') {
+                const select = document.getElementById('reservation-currency');
+                select.innerHTML = '';
+                for (const currency in ratesData) {
+                    select.innerHTML += `<option value="${currency}">${currency}</option>`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
