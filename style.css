@@ -268,6 +268,20 @@ p.lead {
   gap: 8px;
 }
 
+.logo-text {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.logo-infinity {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.4em;
+  height: 0.82em;
+  margin: 0 1px;
+}
+
 .logo-badge {
   background: var(--vivid-yellow);
   color: var(--black);
@@ -850,6 +864,10 @@ footer {
 .footer-brand .logo {
   color: var(--white);
   margin-bottom: 16px;
+}
+
+.footer-brand .logo-infinity path {
+  fill: var(--accent-bright);
 }
 
 .footer-brand p {
