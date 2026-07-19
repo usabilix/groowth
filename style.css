@@ -748,9 +748,17 @@ p.lead {
   letter-spacing: -0.05em;
 }
 
-.process-step:nth-child(1) .step-num-large { color: var(--accent-green); }
-.process-step:nth-child(2) .step-num-large { color: #0284C7; }
-.process-step:nth-child(3) .step-num-large { color: #7E22CE; }
+.process-step:nth-child(1) .step-num-large,
+.process-step:nth-child(1) .step-icon-wrap { color: var(--accent-green); }
+.process-step:nth-child(1) .step-icon-wrap { background: #DCFCE7; border-color: var(--accent-green); }
+
+.process-step:nth-child(2) .step-num-large,
+.process-step:nth-child(2) .step-icon-wrap { color: #0284C7; }
+.process-step:nth-child(2) .step-icon-wrap { background: #E0F2FE; border-color: #0284C7; }
+
+.process-step:nth-child(3) .step-num-large,
+.process-step:nth-child(3) .step-icon-wrap { color: #7E22CE; }
+.process-step:nth-child(3) .step-icon-wrap { background: #F3E8FF; border-color: #7E22CE; }
 
 .step-content {
   margin-top: 40px;
