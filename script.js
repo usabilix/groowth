@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // --- Smooth Bezier Animated Number Counter ---
-  var counterEls = document.querySelectorAll('[data-count]');
+  var counterEls = document.querySelectorAll('[data-count], .pkg-price');
   if ('IntersectionObserver' in window && counterEls.length > 0) {
     // Cubic bezier easing (easeOutExpo / cubic-bezier(0.16, 1, 0.3, 1))
     function easeOutExpo(x) {
@@ -79,8 +79,9 @@ document.addEventListener('DOMContentLoaded', function () {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           var el = entry.target;
-          var targetNum = parseInt(el.getAttribute('data-count'), 10);
-          var prefix = el.getAttribute('data-prefix') || '';
+          var rawText = el.textContent.trim();
+          var targetNum = parseInt(el.getAttribute('data-count') || rawText.replace(/[^0-9]/g, ''), 10) || 300;
+          var prefix = el.getAttribute('data-prefix') || (rawText.indexOf('$') !== -1 ? '$' : '');
           var suffix = el.getAttribute('data-suffix') || '';
           var duration = 1800;
           var startTime = null;
@@ -102,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
           counterObserver.unobserve(el);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
     counterEls.forEach(function (el) {
       counterObserver.observe(el);
