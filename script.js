@@ -66,4 +66,40 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }, { passive: true });
   }
+
+  // --- Animated Number Counters ---
+  var counterEls = document.querySelectorAll('[data-count]');
+  if ('IntersectionObserver' in window && counterEls.length > 0) {
+    var counterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var targetNum = parseInt(el.getAttribute('data-count'), 10);
+          var prefix = el.getAttribute('data-prefix') || '';
+          var suffix = el.getAttribute('data-suffix') || '';
+          var duration = 1400;
+          var startTime = null;
+
+          function updateCount(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var currentNum = Math.floor(progress * targetNum);
+            el.textContent = prefix + currentNum + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(updateCount);
+            } else {
+              el.textContent = prefix + targetNum + suffix;
+            }
+          }
+
+          requestAnimationFrame(updateCount);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    counterEls.forEach(function (el) {
+      counterObserver.observe(el);
+    });
+  }
 });
