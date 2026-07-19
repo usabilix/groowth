@@ -703,6 +703,8 @@ p.lead {
   flex-wrap: wrap;
   gap: 24px;
   border-bottom: 3px solid var(--border-dark);
+  border-top-left-radius: calc(var(--radius-xl) - 3px);
+  border-top-right-radius: calc(var(--radius-xl) - 3px);
 }
 
 .pkg-title-wrap {
@@ -754,6 +756,8 @@ p.lead {
 
 .package-card-body {
   padding: 48px;
+  border-bottom-left-radius: calc(var(--radius-xl) - 3px);
+  border-bottom-right-radius: calc(var(--radius-xl) - 3px);
 }
 
 .package-intro {
