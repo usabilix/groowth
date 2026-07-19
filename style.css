@@ -31,6 +31,13 @@
   --border-light: #CCCCCC;
   --border-subtle: #E2E2DF;
 
+  /* Radius System */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
   --nav-height: 80px;
   --container-max: 1320px;
 }
@@ -153,6 +160,7 @@ p.lead {
   background: var(--vivid-lime);
   padding: 6px 14px;
   border: 1.5px solid var(--black);
+  border-radius: var(--radius-pill);
 }
 
 /* --- Buttons & CTAs --- */
@@ -168,6 +176,7 @@ p.lead {
   letter-spacing: 0.02em;
   padding: 18px 36px;
   border: 2px solid var(--black);
+  border-radius: var(--radius-pill);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: center;
@@ -267,6 +276,7 @@ p.lead {
   padding: 3px 6px;
   letter-spacing: 0.08em;
   border: 1.5px solid var(--black);
+  border-radius: var(--radius-sm);
 }
 
 .nav-links {
@@ -303,6 +313,7 @@ p.lead {
   display: none;
   background: none;
   border: 2px solid var(--black);
+  border-radius: var(--radius-pill);
   padding: 8px 12px;
   font-family: inherit;
   font-weight: 700;
@@ -346,8 +357,19 @@ p.lead {
 .swiss-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-bottom: 2px solid var(--border-dark);
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius-lg);
   background: var(--white);
+  overflow: hidden;
+  margin: 0 32px;
+  max-width: var(--container-max);
+  box-sizing: border-box;
+}
+
+@media (min-width: 1384px) {
+  .swiss-strip {
+    margin: 0 auto;
+  }
 }
 
 .strip-item {
@@ -436,27 +458,21 @@ p.lead {
 .services-table {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 2px solid var(--border-dark);
-  background: var(--white);
+  gap: 24px;
+  border: none;
+  background: transparent;
 }
 
 .service-cell {
   padding: 44px 36px;
-  border-right: 2px solid var(--border-dark);
-  border-bottom: 2px solid var(--border-dark);
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  background: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 280px;
-  transition: background-color 0.2s ease;
-}
-
-.service-cell:nth-child(3n) {
-  border-right: none;
-}
-
-.service-cell:nth-last-child(-n+3) {
-  border-bottom: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cell-icon {
@@ -467,6 +483,7 @@ p.lead {
   justify-content: center;
   background: var(--bg-page);
   border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-md);
   margin-bottom: 24px;
   color: var(--black);
   flex-shrink: 0;
@@ -526,7 +543,9 @@ p.lead {
 
 .package-card {
   border: 3px solid var(--border-dark);
+  border-radius: var(--radius-xl);
   background-color: var(--bg-page);
+  overflow: hidden;
 }
 
 .package-card-header {
@@ -553,9 +572,10 @@ p.lead {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  padding: 6px 12px;
+  padding: 6px 14px;
   margin-bottom: 16px;
   border: 1.5px solid var(--black);
+  border-radius: var(--radius-pill);
 }
 
 .pkg-title-wrap h3 {
@@ -620,6 +640,7 @@ p.lead {
   background-color: var(--accent-green);
   color: var(--white);
   border: 1.5px solid var(--black);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -673,6 +694,7 @@ p.lead {
   height: 40px;
   background: var(--accent-light);
   border: 1.5px solid var(--accent-green);
+  border-radius: 50%;
   color: var(--accent-green);
   display: flex;
   align-items: center;
@@ -689,21 +711,34 @@ p.lead {
 .process-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 2px solid var(--border-dark);
-  background: var(--white);
+  gap: 24px;
+  border: none;
+  background: transparent;
 }
 
 .process-step {
   padding: 48px 40px;
-  border-right: 2px solid var(--border-dark);
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  background: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 320px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.process-step:last-child {
-  border-right: none;
+.step-icon-wrap {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-page);
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  color: var(--black);
 }
 
 .step-num-large {
@@ -905,15 +940,19 @@ footer {
 
 /* Service cell border highlight on hover */
 .service-cell {
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-cell:hover {
+  transform: translateY(-4px);
 }
 
 /* Process step hover lift */
 .process-step {
-  transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .process-step:hover {
   background-color: var(--bg-section);
+  transform: translateY(-4px);
 }
 
 /* Check-box scale pulse on scroll reveal */
@@ -978,35 +1017,9 @@ footer {
   .services-table {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .service-cell:nth-child(2n) {
-    border-right: none;
-  }
-  
-  .service-cell:nth-child(3n) {
-    border-right: 2px solid var(--border-dark);
-  }
-  
-  .service-cell:nth-last-child(-n+3) {
-    border-bottom: 2px solid var(--border-dark);
-  }
-  
-  .service-cell:nth-last-child(-n+2) {
-    border-bottom: none;
-  }
 
   .process-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .process-step {
-    border-right: none;
-    border-bottom: 2px solid var(--border-dark);
-    min-height: auto;
-  }
-  
-  .process-step:last-child {
-    border-bottom: none;
   }
 }
 
@@ -1050,6 +1063,7 @@ footer {
     height: calc(100dvh - var(--nav-height));
     background: var(--white);
     border-bottom: 2px solid var(--border-dark);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
     padding: 32px 16px;
     display: flex;
     flex-direction: column;
