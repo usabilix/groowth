@@ -67,9 +67,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
-  // --- Animated Number Counters ---
+  // --- Smooth Bezier Animated Number Counter ---
   var counterEls = document.querySelectorAll('[data-count]');
   if ('IntersectionObserver' in window && counterEls.length > 0) {
+    // Cubic bezier easing (easeOutExpo / cubic-bezier(0.16, 1, 0.3, 1))
+    function easeOutExpo(x) {
+      return x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
+    }
+
     var counterObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -77,15 +82,16 @@ document.addEventListener('DOMContentLoaded', function () {
           var targetNum = parseInt(el.getAttribute('data-count'), 10);
           var prefix = el.getAttribute('data-prefix') || '';
           var suffix = el.getAttribute('data-suffix') || '';
-          var duration = 1400;
+          var duration = 1800;
           var startTime = null;
 
           function updateCount(timestamp) {
             if (!startTime) startTime = timestamp;
-            var progress = Math.min((timestamp - startTime) / duration, 1);
-            var currentNum = Math.floor(progress * targetNum);
+            var linearProgress = Math.min((timestamp - startTime) / duration, 1);
+            var easedProgress = easeOutExpo(linearProgress);
+            var currentNum = Math.floor(easedProgress * targetNum);
             el.textContent = prefix + currentNum + suffix;
-            if (progress < 1) {
+            if (linearProgress < 1) {
               requestAnimationFrame(updateCount);
             } else {
               el.textContent = prefix + targetNum + suffix;
@@ -96,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
           counterObserver.unobserve(el);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.15 });
 
     counterEls.forEach(function (el) {
       counterObserver.observe(el);

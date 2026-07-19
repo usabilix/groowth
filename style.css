@@ -685,9 +685,12 @@ p.lead {
 }
 
 @keyframes badgeGlowPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 3px 3px 0px var(--black), 0 0 14px rgba(22, 163, 74, 0.35);
   }
+
   50% {
     box-shadow: 3px 3px 0px var(--black), 0 0 28px rgba(22, 163, 74, 0.75);
   }
@@ -1183,13 +1186,16 @@ footer {
     transform: scale(0);
     opacity: 0;
   }
+
   60% {
     transform: scale(1.25);
     opacity: 1;
   }
+
   80% {
     transform: scale(0.92);
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -1628,6 +1634,7 @@ footer {
     transform: scale(0.95);
     opacity: 0.8;
   }
+
   100% {
     transform: scale(1.35);
     opacity: 0;
@@ -1639,6 +1646,7 @@ footer {
     opacity: 0;
     transform: translateY(30px) scale(0.85);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -1674,8 +1682,17 @@ footer {
 }
 
 @keyframes dotPulseAni {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
 }
 
 .pill-title {
