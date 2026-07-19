@@ -650,14 +650,47 @@ p.lead {
 
 .package-wrapper {
   max-width: 960px;
-  margin: 0 auto;
+  margin: 24px auto 0;
 }
 
 .package-card {
+  position: relative;
   border: 3px solid var(--border-dark);
   border-radius: var(--radius-xl);
   background-color: var(--bg-page);
-  overflow: hidden;
+  overflow: visible;
+  box-shadow: 8px 8px 0px var(--black), 0 20px 50px rgba(22, 163, 74, 0.18);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.pkg-top-urgency-badge {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: var(--accent-green);
+  color: var(--white);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 8px 22px;
+  border: 2px solid var(--black);
+  border-radius: var(--radius-pill);
+  box-shadow: 3px 3px 0px var(--black);
+  white-space: nowrap;
+  animation: badgeGlowPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes badgeGlowPulse {
+  0%, 100% {
+    box-shadow: 3px 3px 0px var(--black), 0 0 14px rgba(22, 163, 74, 0.35);
+  }
+  50% {
+    box-shadow: 3px 3px 0px var(--black), 0 0 28px rgba(22, 163, 74, 0.75);
+  }
 }
 
 .package-card-header {
@@ -1130,26 +1163,32 @@ footer {
   transform: translateY(-4px);
 }
 
-/* Check-box scale pulse on scroll reveal */
+/* Check-box spring pop with staggered delay */
 .deliverable-item.reveal .check-box {
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(0);
+  opacity: 0;
 }
 
 .deliverable-item.reveal.visible .check-box {
-  animation: check-pop 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: spring-check-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 0.08s + 0.15s);
 }
 
-@keyframes check-pop {
+@keyframes spring-check-pop {
   0% {
-    transform: scale(0.6);
+    transform: scale(0);
+    opacity: 0;
   }
-
   60% {
-    transform: scale(1.1);
+    transform: scale(1.25);
+    opacity: 1;
   }
-
+  80% {
+    transform: scale(0.92);
+  }
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
