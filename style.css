@@ -82,6 +82,10 @@ img {
   display: block;
 }
 
+section {
+  scroll-margin-top: calc(var(--nav-height) + 24px);
+}
+
 /* --- Layout Utilities --- */
 .container {
   max-width: var(--container-max);
@@ -230,6 +234,11 @@ p.lead {
   z-index: 1000;
   display: flex;
   align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+#navbar.scrolled {
+  background-color: var(--white);
 }
 
 .nav-container {
@@ -944,6 +953,104 @@ footer {
   color: #777777;
 }
 
+/* --- Scroll Reveal Micro-Animations --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.07s; }
+.reveal-delay-2 { transition-delay: 0.14s; }
+.reveal-delay-3 { transition-delay: 0.21s; }
+.reveal-delay-4 { transition-delay: 0.28s; }
+.reveal-delay-5 { transition-delay: 0.35s; }
+.reveal-delay-6 { transition-delay: 0.42s; }
+
+/* Stagger for service cells */
+.service-cell.reveal { transition-delay: calc(var(--i, 0) * 0.06s); }
+
+/* Subtle entrance for strip items */
+.strip-item {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: strip-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.strip-item:nth-child(1) { animation-delay: 0.1s; }
+.strip-item:nth-child(2) { animation-delay: 0.2s; }
+.strip-item:nth-child(3) { animation-delay: 0.3s; }
+.strip-item:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes strip-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button micro-interaction: subtle scale on active */
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Service cell border highlight on hover */
+.service-cell {
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Process step hover lift */
+.process-step {
+  transition: background-color 0.25s ease;
+}
+.process-step:hover {
+  background-color: var(--bg-section);
+}
+
+/* Check-box scale pulse on scroll reveal */
+.deliverable-item.reveal .check-box {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.deliverable-item.reveal.visible .check-box {
+  animation: check-pop 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes check-pop {
+  0% { transform: scale(0.6); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Navbar link underline animation */
+.nav-links a {
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-green);
+  transition: width 0.25s ease;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Pos icon hover wiggle */
+.pos-icon {
+  transition: transform 0.2s ease;
+}
+.pos-list li:hover .pos-icon {
+  transform: scale(1.15);
+}
+
 /* --- Responsive Adaptations --- */
 @media (max-width: 1080px) {
   .hero-grid {
@@ -1001,23 +1108,33 @@ footer {
 
 @media (max-width: 768px) {
   :root {
-    --nav-height: 70px;
+    --nav-height: 64px;
+  }
+  
+  body {
+    font-size: 16px;
   }
   
   .container {
-    padding: 0 20px;
+    padding: 0 16px;
   }
   
   .section-padding {
-    padding: 80px 0;
+    padding: 72px 0;
   }
-  
+
+  /* --- Mobile Navigation --- */
   .nav-links, .nav-cta-wrap .btn-nav {
     display: none;
   }
   
   .menu-toggle {
     display: block;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .mobile-menu {
@@ -1025,38 +1142,120 @@ footer {
     top: var(--nav-height);
     left: 0;
     width: 100%;
+    height: calc(100vh - var(--nav-height));
+    height: calc(100dvh - var(--nav-height));
     background: var(--white);
     border-bottom: 2px solid var(--border-dark);
-    padding: 32px 20px;
+    padding: 32px 16px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 0;
     z-index: 999;
     transform: translateY(-150%);
-    transition: transform 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    overflow-y: auto;
   }
   
   .mobile-menu.open {
     transform: translateY(0);
   }
   
-  .mobile-menu a {
-    font-size: 1.3rem;
+  .mobile-menu a.mobile-link {
+    font-size: 1.2rem;
     font-weight: 800;
     text-transform: uppercase;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    display: block;
   }
   
+  .mobile-menu .btn {
+    margin-top: 24px;
+    min-height: 52px;
+  }
+
+  /* --- Mobile Hero --- */
+  #hero {
+    padding-top: calc(var(--nav-height) + 40px);
+    padding-bottom: 56px;
+  }
+  
+  .hero-header {
+    margin-bottom: 24px;
+  }
+
+  .swiss-label {
+    font-size: 0.72rem;
+    padding: 5px 10px;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 9vw, 3.2rem);
+    line-height: 1.05;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+  
+  p.lead {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 52px;
+  }
+
+  .hero-manifesto {
+    padding: 24px;
+  }
+
+  .manifesto-highlight {
+    font-size: 1.1rem;
+  }
+
+  /* --- Mobile Swiss Strip --- */
   .swiss-strip {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .strip-item {
     border-right: none !important;
     border-bottom: 2px solid var(--border-dark);
+    padding: 20px 16px;
   }
   
-  .strip-item:last-child {
+  .strip-item:nth-child(odd) {
+    border-right: 2px solid var(--border-dark) !important;
+  }
+  
+  .strip-item:nth-child(3),
+  .strip-item:nth-child(4) {
     border-bottom: none;
+  }
+
+  .strip-label {
+    font-size: 1rem;
+  }
+
+  /* --- Mobile Positioning --- */
+  .swiss-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+  }
+
+  .swiss-header-right {
+    font-size: 1rem;
   }
   
   .positioning-grid {
@@ -1069,9 +1268,18 @@ footer {
   }
   
   .pos-box {
-    padding: 36px 24px;
+    padding: 32px 20px;
   }
-  
+
+  .pos-title {
+    font-size: 1.4rem;
+  }
+
+  .pos-list li {
+    font-size: 0.95rem;
+  }
+
+  /* --- Mobile Services --- */
   .services-table {
     grid-template-columns: 1fr;
   }
@@ -1079,30 +1287,137 @@ footer {
   .service-cell {
     border-right: none !important;
     border-bottom: 2px solid var(--border-dark) !important;
-    padding: 32px 24px;
+    padding: 28px 20px;
     min-height: auto;
   }
   
   .service-cell:last-child {
     border-bottom: none !important;
   }
+
+  .cell-top {
+    margin-bottom: 20px;
+  }
+
+  .service-cell h3 {
+    font-size: 1.2rem;
+  }
+
+  /* --- Mobile Package --- */  
+  #package {
+    padding: 72px 0;
+  }
+
+  .package-card {
+    border-width: 2px;
+  }
   
-  .package-card-header,
-  .package-card-body,
+  .package-card-header {
+    padding: 28px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .package-card-body {
+    padding: 28px 20px;
+  }
+
   .package-card-footer {
-    padding: 32px 24px;
+    padding: 24px 20px;
+    justify-content: center;
+  }
+  
+  .pkg-title-wrap h3 {
+    font-size: 1.6rem;
   }
   
   .pkg-price-wrap {
     text-align: left;
   }
+
+  .pkg-price {
+    font-size: 3.5rem;
+  }
   
   .deliverables-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .package-intro {
+    font-size: 1rem;
+  }
+
+  .deliv-title {
+    font-size: 0.95rem;
+  }
+
+  /* --- Mobile Process --- */
+  .process-step {
+    padding: 32px 20px;
+    flex-direction: row;
+    align-items: flex-start;
     gap: 24px;
+    min-height: auto;
+  }
+
+  .step-num-large {
+    font-size: 2.4rem;
+  }
+
+  .step-content {
+    margin-top: 0;
+  }
+
+  .step-content h3 {
+    font-size: 1.2rem;
+  }
+
+  /* --- Mobile Final CTA --- */
+  #final-cta {
+    padding: 72px 0;
+  }
+
+  .btn-white-punchy {
+    padding: 18px 32px;
+    font-size: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- Mobile Footer --- */
+  .footer-top {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
   }
   
   .footer-links {
-    gap: 40px;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .pkg-price {
+    font-size: 2.8rem;
+  }
+
+  .strip-label {
+    font-size: 0.9rem;
   }
 }
