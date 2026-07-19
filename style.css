@@ -311,70 +311,35 @@ p.lead {
   cursor: pointer;
 }
 
-/* --- Hero Section (Swiss Poster Style) --- */
+/* --- Hero Section --- */
 #hero {
-  padding-top: calc(var(--nav-height) + 70px);
-  padding-bottom: 90px;
+  padding-top: calc(var(--nav-height) + 48px);
+  padding-bottom: 64px;
   border-bottom: 2px solid var(--border-dark);
   position: relative;
 }
 
-.hero-header {
-  margin-bottom: 40px;
+.hero-badge-row {
+  margin-bottom: 24px;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 64px;
-  align-items: flex-start;
+#hero h1 {
+  margin-bottom: 20px;
 }
 
-.hero-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+.hero-sub {
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--dark-gray);
+  font-weight: 400;
+  max-width: 680px;
+  margin-bottom: 32px;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-}
-
-.hero-manifesto {
-  background-color: #FEFCE8;
-  border: 2px solid var(--border-dark);
-  padding: 36px;
-  position: relative;
-}
-
-.hero-manifesto-title {
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border-light);
-  padding-bottom: 12px;
-}
-
-.manifesto-highlight {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--black);
-  line-height: 1.3;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.manifesto-text {
-  font-size: 1rem;
-  color: var(--body-color);
-  line-height: 1.6;
 }
 
 /* --- Swiss Data Strip --- */
@@ -403,11 +368,17 @@ p.lead {
   border-right: none;
 }
 
-.strip-num {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--muted);
-  letter-spacing: 0.08em;
+.strip-icon {
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+.strip-label {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 .strip-label {
@@ -456,78 +427,7 @@ p.lead {
   max-width: 420px;
 }
 
-/* --- Positioning / Why Section --- */
-#positioning {
-  background-color: var(--white);
-  border-bottom: 2px solid var(--border-dark);
-}
-
-.positioning-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border: 2px solid var(--border-dark);
-}
-
-.pos-box {
-  padding: 56px 48px;
-}
-
-.pos-box:first-child {
-  border-right: 2px solid var(--border-dark);
-  background-color: #FFF1F2;
-}
-
-.pos-box:last-child {
-  background-color: #ECFDF5;
-}
-
-.pos-title {
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.pos-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 28px;
-}
-
-.pos-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  font-size: 1.05rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.pos-icon {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  border: 1.5px solid var(--black);
-}
-
-.pos-icon.cross {
-  background: #FEE2E2;
-  color: #DC2626;
-  border-color: #DC2626;
-}
-
-.pos-icon.check {
-  background: var(--accent-light);
-  color: var(--accent-green);
-  border-color: var(--accent-green);
-}
-
-/* --- Services Grid (Swiss International Style Table Grid) --- */
+/* --- Services Grid --- */
 #services {
   background-color: var(--bg-page);
   border-bottom: 2px solid var(--border-dark);
@@ -559,45 +459,30 @@ p.lead {
   border-bottom: none;
 }
 
-.service-cell:hover {
-  background-color: var(--bg-section);
-}
-
-.cell-top {
+.cell-icon {
+  width: 52px;
+  height: 52px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 32px;
-}
-
-.cell-num {
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--muted);
-  letter-spacing: 0.05em;
-}
-
-.cell-tag {
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border: 1.5px solid var(--black);
+  align-items: center;
+  justify-content: center;
   background: var(--bg-page);
+  border: 1.5px solid var(--border-dark);
+  margin-bottom: 24px;
   color: var(--black);
+  flex-shrink: 0;
 }
 
-.service-cell:nth-child(1) .cell-tag { background: #FEF08A; }
-.service-cell:nth-child(2) .cell-tag { background: #A7F3D0; }
-.service-cell:nth-child(3) .cell-tag { background: #BAE6FD; }
-.service-cell:nth-child(4) .cell-tag { background: #DDD6FE; }
-.service-cell:nth-child(5) .cell-tag { background: #FED7AA; }
-.service-cell:nth-child(6) .cell-tag { background: #D9F99D; }
-.service-cell:nth-child(7) .cell-tag { background: #FECDD3; }
-.service-cell:nth-child(8) .cell-tag { background: #E2E8F0; }
-.service-cell:nth-child(9) .cell-tag { background: #FEF08A; }
+.service-cell:nth-child(1) .cell-icon { background: #FEF08A; }
+.service-cell:nth-child(2) .cell-icon { background: #A7F3D0; }
+.service-cell:nth-child(3) .cell-icon { background: #BAE6FD; }
+.service-cell:nth-child(4) .cell-icon { background: #DDD6FE; }
+.service-cell:nth-child(5) .cell-icon { background: #FED7AA; }
+.service-cell:nth-child(6) .cell-icon { background: #D9F99D; }
+.service-cell:nth-child(7) .cell-icon { background: #FECDD3; }
+.service-cell:nth-child(8) .cell-icon { background: #E2E8F0; }
+.service-cell:nth-child(9) .cell-icon { background: #FEF08A; }
 
-.service-cell:nth-child(1):hover { background-color: #FEFCE8; }
+.service-cell:nth-child(1):hover { background-color: #FFFEF0; }
 .service-cell:nth-child(2):hover { background-color: #ECFDF5; }
 .service-cell:nth-child(3):hover { background-color: #F0F9FF; }
 .service-cell:nth-child(4):hover { background-color: #FAF5FF; }
@@ -605,7 +490,15 @@ p.lead {
 .service-cell:nth-child(6):hover { background-color: #F7FEE7; }
 .service-cell:nth-child(7):hover { background-color: #FFF1F2; }
 .service-cell:nth-child(8):hover { background-color: #F8FAFC; }
-.service-cell:nth-child(9):hover { background-color: #FEFCE8; }
+.service-cell:nth-child(9):hover { background-color: #FFFEF0; }
+
+.service-cell:hover .cell-icon {
+  transform: scale(1.08);
+}
+
+.cell-icon {
+  transition: transform 0.2s ease;
+}
 
 .service-cell h3 {
   font-size: 1.45rem;
@@ -842,15 +735,27 @@ p.lead {
 /* --- Big Punchy Call to Action Section --- */
 #final-cta {
   background-color: var(--accent-green);
+  background-image: 
+    radial-gradient(circle at 90% 10%, rgba(250, 204, 21, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(22, 163, 74, 0.4) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.09'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3Cpath d='M0 60L60 0' stroke='%23ffffff' stroke-opacity='0.04' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 60px 60px, 40px 40px, 40px 40px;
+  background-position: center, center, 0 0, 0 0, 0 0;
   color: var(--white);
-  padding: 120px 0;
+  padding: 130px 0;
   border-bottom: 2px solid var(--border-dark);
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .final-cta-content {
   max-width: 860px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .final-cta-content h2 {
