@@ -1,330 +1,571 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2MARS Exchange - Bureau de change à Casablanca</title>
-    <meta name="description" content="Bureau de change agréé par Bank Al-Maghrib. Service rapide, fiable et digital pour l’achat et la vente de devises à Casablanca.">
-    <link rel="stylesheet" href="style.css">
+
+    <!-- SEO & Performance -->
+    <title>Groowth — Branding, Visual Identity & High-Converting Websites for Tree Services</title>
+    <meta name="description" content="We help tree service and arborist businesses grow via solid branding, visual identity, positioning, and high-converting copywriting. Get everything in one $300 package.">
+    <meta name="keywords" content="tree service branding, arborist marketing, tree service website design, tree care visual identity, tree company copywriting, tree service meta ads">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Groowth — Branding & Marketing for Tree Service Businesses">
+    <meta property="og:description" content="Solid branding, visual identity, SEO website, social media templates, Meta ads, and print marketing—in one punchy $300 package.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Groowth — Branding & Marketing for Tree Service Businesses">
+    <meta name="twitter:description" content="Solid branding, visual identity, SEO website, social media templates, Meta ads, and print marketing—in one punchy $300 package.">
+
+    <!-- Space Grotesk Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌲</text></svg>">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header id="header">
+    <!-- ====== Navigation ====== -->
+    <header id="navbar" aria-label="Main Navigation">
         <div class="container nav-container">
-            <div class="logo-container">
-                <a href="index.html"><img src="Assets/Logo.svg" alt="2MARS Exchange Logo"></a>
-            </div>
-            <nav class="nav-links">
-                <a href="#accueil" data-i18n="nav_home">Accueil</a>
-                <a href="#simulateur" data-i18n="nav_simulator">Simulateur</a>
-                <a href="#taux" data-i18n="nav_rates">Taux de change</a>
-                
-                <div class="dropdown">
-                    <button class="dropbtn"><span data-i18n="nav_services">Services</span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
-                    <div class="dropdown-content">
-                        <a href="dotation-ir.html" data-i18n="nav_dotation">Dotation IR</a>
-                        <a href="consultation.html" data-i18n="nav_consultation">Consultation Dotation</a>
-                        <a href="reservation.html" data-i18n="nav_reservation">Réservation de devises</a>
-                    </div>
-                </div>
+            <a href="#" class="logo" aria-label="Groowth Home">
+                GROOWTH <span class="logo-badge">AGENCY</span>
+            </a>
 
-                <a href="#avantages" data-i18n="nav_advantages">Avantages</a>
-                <a href="#contact" data-i18n="nav_contact">Contact</a>
-                <div class="lang-switch">
-                    <button class="active" onclick="setLang('fr')">FR</button>
-                    <button onclick="setLang('en')">EN</button>
-                </div>
+            <nav class="nav-links" aria-label="Desktop Menu">
+                <a href="#positioning">Positioning</a>
+                <a href="#services">What We Build</a>
+                <a href="#package">The $300 Package</a>
+                <a href="#process">How It Works</a>
             </nav>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-            </button>
+
+            <div class="nav-cta-wrap">
+                <a href="https://cal.com/haythem-rais/discovery-call" class="btn btn-primary btn-nav" target="_blank" rel="noopener noreferrer">
+                    Book Call ↗
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
+                    Menu ↓
+                </button>
+            </div>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="accueil" class="hero">
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <div style="display: flex; margin-bottom: 1.5rem;">
-                        <div class="trust-badge" style="display: flex; align-items: center; gap: 0.5rem; background: var(--black); color: var(--white); padding: 0.5rem 1rem; border-radius: 50px; font-weight: 600; width: fit-content;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#659788" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-                            <span data-i18n="badge_text">Bureau agréé par Bank Al-Maghrib</span>
-                        </div>
-                    </div>
-                    <h1 data-i18n="hero_title">Le Meilleur Taux de Change à Casablanca</h1>
-                    <p data-i18n="hero_desc">“2MARS Exchange”, bureau agréé par Bank Al-Maghrib, vous offre un service rapide, fiable et digital pour l’achat et la vente de devises. Alliant confiance, excellence et innovation, nous plaçons nos clients au cœur de chaque échange.</p>
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <a href="#positioning" class="mobile-link">01 / Positioning</a>
+        <a href="#services" class="mobile-link">02 / What We Build</a>
+        <a href="#package" class="mobile-link">03 / The $300 Package</a>
+        <a href="#process" class="mobile-link">04 / How It Works</a>
+        <a href="https://cal.com/haythem-rais/discovery-call" class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
+            Book Discovery Call ↗
+        </a>
+    </div>
+
+    <!-- ====== Hero Section (Swiss Poster x Modern Punchy) ====== -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-header">
+                <span class="swiss-label">
+                    <span>■</span> SPECIALIZED FOR TREE SERVICE &amp; ARBORIST BUSINESSES
+                </span>
+            </div>
+
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <h1>
+                        SOLID BRANDING.<br>
+                        SHARP POSITIONING.<br>
+                        MORE TREE JOBS.
+                    </h1>
+                    <p class="lead">
+                        We transform outdated tree service businesses into local authority brands. High-converting copywriting, custom visual identity, fast SEO websites, and paid ad setups—all in one punchy package.
+                    </p>
                     <div class="hero-actions">
-                        <a href="#simulateur" class="btn btn-primary" data-i18n="btn_simulate">Simuler une transaction</a>
-                        <a href="#contact" class="btn btn-secondary" data-i18n="btn_contact">Nous contacter</a>
+                        <a href="https://cal.com/haythem-rais/discovery-call" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            Book Discovery Call ↗
+                        </a>
+                        <a href="#package" class="btn btn-secondary">
+                            View The $300 Package ↓
+                        </a>
                     </div>
                 </div>
-                <div class="hero-simulator" id="simulateur">
-                    <div class="simulator-card">
-                        <h3 data-i18n="sim_title">Convertisseur de Devises</h3>
-                        <div class="simulator-tabs">
-                            <button class="simulator-tab active" id="tab-buy" onclick="setMode('buy')" data-i18n="sim_tab_buy">J'achète des devises</button>
-                            <button class="simulator-tab" id="tab-sell" onclick="setMode('sell')" data-i18n="sim_tab_sell">Je vends des devises</button>
+
+                <div class="hero-manifesto">
+                    <div class="hero-manifesto-title">
+                        <span>// THE GROOWTH STANDARD</span>
+                        <span>CH 2026</span>
+                    </div>
+                    <div class="manifesto-highlight">
+                        WHY CHOOSE A GENERIC WEB SHOP WHEN YOU CAN WORK WITH A TEAM THAT KNOWS THE TREE SERVICE INDUSTRY?
+                    </div>
+                    <p class="manifesto-text">
+                        Homeowners don't hire the cheapest tree trimmer—they hire the company that looks safe, professional, and established. We give you the exact visual identity and sales copy needed to command high-ticket tree removal contracts.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Swiss Data Strip ====== -->
+    <div class="swiss-strip">
+        <div class="strip-item">
+            <span class="strip-num">/ 01</span>
+            <span class="strip-label">$300 Flat</span>
+            <span class="strip-desc">One all-inclusive package</span>
+        </div>
+        <div class="strip-item">
+            <span class="strip-num">/ 02</span>
+            <span class="strip-label">50% Deposit</span>
+            <span class="strip-desc">$150 upfront, $150 on delivery</span>
+        </div>
+        <div class="strip-item">
+            <span class="strip-num">/ 03</span>
+            <span class="strip-label">100% Custom</span>
+            <span class="strip-desc">Tailored to your local tree business</span>
+        </div>
+        <div class="strip-item">
+            <span class="strip-num">/ 04</span>
+            <span class="strip-label">Zero Shadows</span>
+            <span class="strip-desc">Clean, fast, high-contrast design</span>
+        </div>
+    </div>
+
+    <!-- ====== Positioning & Why Section ====== -->
+    <section id="positioning" class="section-padding">
+        <div class="container">
+            <div class="swiss-header">
+                <div class="swiss-header-left">
+                    <span>// 01. POSITIONING &amp; STRATEGY</span>
+                    <h2>STOP LOSING JOBS TO OUTDATED MARKETING.</h2>
+                </div>
+                <div class="swiss-header-right">
+                    <p>When an emergency storm hits or a homeowner needs dangerous branches removed, they judge your reliability by your brand.</p>
+                </div>
+            </div>
+
+            <div class="positioning-grid">
+                <!-- Outdated Approach -->
+                <div class="pos-box">
+                    <h3 class="pos-title">TYPICAL TREE SERVICE MARKETING</h3>
+                    <p class="muted">Why most arborist websites fail to convert traffic into phone calls:</p>
+                    <ul class="pos-list">
+                        <li>
+                            <span class="pos-icon cross">×</span>
+                            <span>Generic DIY website with slow loading speeds and broken mobile layouts.</span>
+                        </li>
+                        <li>
+                            <span class="pos-icon cross">×</span>
+                            <span>Pixelated logo or basic clip-art tree that looks indistinguishable from 50 competitors.</span>
+                        </li>
+                        <li>
+                            <span class="pos-icon cross">×</span>
+                            <span>Weak, boring copywriting ("We cut trees") instead of focusing on safety, insurance &amp; trust.</span>
+                        </li>
+                        <li>
+                            <span class="pos-icon cross">×</span>
+                            <span>Relying solely on shared lead platforms where you get in price wars with lowballers.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- The Groowth Advantage -->
+                <div class="pos-box">
+                    <h3 class="pos-title">THE GROOWTH ADVANTAGE</h3>
+                    <p class="muted">How we position your tree care company as the #1 authority:</p>
+                    <ul class="pos-list">
+                        <li>
+                            <span class="pos-icon check">✓</span>
+                            <span>Bold, high-contrast visual identity and logo redesign that immediately commands respect.</span>
+                        </li>
+                        <li>
+                            <span class="pos-icon check">✓</span>
+                            <span>Custom SEO website engineered for ultra-fast performance and high call conversions.</span>
+                        </li>
+                        <li>
+                            <span class="pos-icon check">✓</span>
+                            <span>Punchy copywriting that addresses homeowner fears, highlights licensing, and drives urgency.</span>
+                        </li>
+                        <li>
+                            <span class="pos-icon check">✓</span>
+                            <span>A complete ecosystem: Meta ads, social templates, print flyers, and Google optimization.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Services Grid (Swiss International Style Table) ====== -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="swiss-header">
+                <div class="swiss-header-left">
+                    <span>// 02. FULL-STACK ARBORIST ARSENAL</span>
+                    <h2>WHAT WE BUILD FOR YOUR BUSINESS.</h2>
+                </div>
+                <div class="swiss-header-right">
+                    <p>No filler. No fluff. Every single asset is specifically designed to help your tree service win residential and commercial contracts.</p>
+                </div>
+            </div>
+
+            <div class="services-table">
+                <!-- Service 1 -->
+                <article class="service-cell">
+                    <div class="cell-top">
+                        <span class="cell-num">[ 01 ]</span>
+                        <span class="cell-tag">BRANDING</span>
+                    </div>
+                    <div>
+                        <h3>Logo Audit &amp; Redesign</h3>
+                        <p>We audit your existing logo and craft a crisp, modern visual identity that looks sharp on trucks, uniforms, and digital screens.</p>
+                    </div>
+                </article>
+
+                <!-- Service 2 -->
+                <article class="service-cell">
+                    <div class="cell-top">
+                        <span class="cell-num">[ 02 ]</span>
+                        <span class="cell-tag">WEB &amp; COPY</span>
+                    </div>
+                    <div>
+                        <h3>Custom SEO Website</h3>
+                        <p>Professional, lightweight, super-fast website paired with high-converting copywriting tailored to close tree removal &amp; trimming leads.</p>
+                    </div>
+                </article>
+
+                <!-- Service 3 -->
+                <article class="service-cell">
+                    <div class="cell-top">
+                        <span class="cell-num">[ 03 ]</span>
+                        <span class="cell-tag">SOCIAL MEDIA</span>
+                    </div>
+                    <div>
+                        <h3>9 Social Templates</h3>
+                        <p>High-quality, branded social media templates for before/after project showcases, safety tips, and customer highlights.</p>
+                    </div>
+                </article>
+
+                <!-- Service 4 -->
+                <article class="service-cell">
+                    <div class="cell-top">
+                        <span class="cell-num">[ 04 ]</span>
+                        <span class="cell-tag">PAID ADVERTISING</span>
+                    </div>
+                    <div>
+                        <h3>6 Meta Ads Creatives</h3>
+                        <p>Punchy, scroll-stopping graphic and video concepts designed to generate high-quality tree service inquiries on Facebook &amp; Instagram.</p>
+                    </div>
+                </article>
+
+                <!-- Service 5 -->
+                <article class="service-cell">
+                    <div class="cell-top">
+                        <span class="cell-num">[ 05 ]</span>
+                        <span class="cell-tag">STREET MARKETING</span>
+                    </div>
+                    <div>
+                        <h3>Flyer &amp; Banner Design</h3>
+                        <p>Eye-catching print designs built for neighborhood canvassing, lawn signs, and local events where equipment is operating.</p>
+                    </div>
+                </article>
+
+                <!-- Service 6 -->
+                <article class="service-cell">
+                    <div class="cell-top">
+                        <span class="cell-num">[ 06 ]</span>
+                        <span class="cell-tag">CAMPAIGN SETUP</span>
+                    </div>
+                    <div>
+                        <h3>Meta &amp; Google Ads Setup</h3>
+                        <p>Complete structural setup of your paid ad campaigns on both Google (high intent search) and Meta (local area targeting).</p>
+                    </div>
+                </article>
+
+                <!-- Service 7 -->
+                <article class="service-cell">
+                    <div class="cell-top">
+                        <span class="cell-num">[ 07 ]</span>
+                        <span class="cell-tag">LOCAL SEO</span>
+                    </div>
+                    <div>
+                        <h3>Google Profile Optimization</h3>
+                        <p>Comprehensive audit and optimization of your Google Business Profile to help you dominate local map pack searches.</p>
+                    </div>
+                </article>
+
+                <!-- Service 8 -->
+                <article class="service-cell">
+                    <div class="cell-top">
+                        <span class="cell-num">[ 08 ]</span>
+                        <span class="cell-tag">PRINT IDENTITY</span>
+                    </div>
+                    <div>
+                        <h3>Business Card Design</h3>
+                        <p>Premium, high-contrast business card layout that leaves a lasting impression when meeting property managers and homeowners.</p>
+                    </div>
+                </article>
+
+                <!-- Service 9 -->
+                <article class="service-cell">
+                    <div class="cell-top">
+                        <span class="cell-num">[ 09 ]</span>
+                        <span class="cell-tag">SALES ASSET</span>
+                    </div>
+                    <div>
+                        <h3>Tree Services Manual PDF</h3>
+                        <p>A beautifully formatted educational manual with great visuals explaining tree care, pruning benefits, and why to choose your company.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== The $300 Package Section (Punchy Card) ====== -->
+    <section id="package">
+        <div class="container">
+            <div class="swiss-header">
+                <div class="swiss-header-left">
+                    <span>// 03. THE ALL-INCLUSIVE OFFER</span>
+                    <h2>ONE PACKAGE. ZERO HIDDEN FEES.</h2>
+                </div>
+                <div class="swiss-header-right">
+                    <p>We keep our pricing transparent and simple. Get our complete agency transformation for a single flat rate.</p>
+                </div>
+            </div>
+
+            <div class="package-wrapper">
+                <div class="package-card">
+                    <!-- Card Header -->
+                    <div class="package-card-header">
+                        <div class="pkg-title-wrap">
+                            <span class="pkg-tag">THE GROWTH SYSTEM</span>
+                            <h3>THE COMPLETE TREE SERVICE PACKAGE</h3>
                         </div>
-                        
-                        <div class="input-group">
-                            <label data-i18n="sim_label_give">Montant à échanger</label>
-                            <div class="input-row">
-                                <input type="number" id="amount-input" value="1000" min="0">
-                                <select id="currency-from"></select>
+                        <div class="pkg-price-wrap">
+                            <span class="pkg-price">$300</span>
+                            <span class="pkg-terms">50% DEPOSIT UPFRONT ($150 TO START)</span>
+                        </div>
+                    </div>
+
+                    <!-- Card Body -->
+                    <div class="package-card-body">
+                        <div class="package-intro">
+                            EVERYTHING INCLUDED IN YOUR $300 AGENCY PACKAGE:
+                        </div>
+
+                        <div class="deliverables-grid">
+                            <!-- Item 1 -->
+                            <div class="deliverable-item">
+                                <span class="check-box">01</span>
+                                <div class="deliverable-text">
+                                    <span class="deliv-title">Logo Audit &amp; Redesign</span>
+                                    <span class="deliv-sub">Modernize and elevate your visual identity</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="deliverable-item">
+                                <span class="check-box">02</span>
+                                <div class="deliverable-text">
+                                    <span class="deliv-title">Fast SEO Custom Website</span>
+                                    <span class="deliv-sub">Custom design + high-converting copywriting</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="deliverable-item">
+                                <span class="check-box">03</span>
+                                <div class="deliverable-text">
+                                    <span class="deliv-title">9 Social Media Templates</span>
+                                    <span class="deliv-sub">Ready-to-use high quality post formats</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="deliverable-item">
+                                <span class="check-box">04</span>
+                                <div class="deliverable-text">
+                                    <span class="deliv-title">6 Meta Ads Creatives</span>
+                                    <span class="deliv-sub">High-converting designs for paid traffic</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 5 -->
+                            <div class="deliverable-item">
+                                <span class="check-box">05</span>
+                                <div class="deliverable-text">
+                                    <span class="deliv-title">Flyer &amp; Banner Design</span>
+                                    <span class="deliv-sub">High-impact physical street marketing assets</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 6 -->
+                            <div class="deliverable-item">
+                                <span class="check-box">06</span>
+                                <div class="deliverable-text">
+                                    <span class="deliv-title">Meta &amp; Google Ads Setup</span>
+                                    <span class="deliv-sub">Done-for-you campaign structure &amp; launching</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 7 -->
+                            <div class="deliverable-item">
+                                <span class="check-box">07</span>
+                                <div class="deliverable-text">
+                                    <span class="deliv-title">Google Business Profile Optimization</span>
+                                    <span class="deliv-sub">Audit &amp; local ranking boost</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 8 -->
+                            <div class="deliverable-item">
+                                <span class="check-box">08</span>
+                                <div class="deliverable-text">
+                                    <span class="deliv-title">Business Card Design</span>
+                                    <span class="deliv-sub">Clean, professional card layout for job sites</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 9 -->
+                            <div class="deliverable-item">
+                                <span class="check-box">09</span>
+                                <div class="deliverable-text">
+                                    <span class="deliv-title">Tree Services Manual PDF</span>
+                                    <span class="deliv-sub">Illustrated educational guide with great visuals</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="exchange-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="m16 17-4 4-4-4"/><path d="m8 7 4-4 4 4"/></svg>
+
+                        <a href="https://cal.com/haythem-rais/discovery-call" class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
+                            BOOK DISCOVERY CALL TO START ($150 DEPOSIT) ↗
+                        </a>
+                    </div>
+
+                    <!-- Card Footer -->
+                    <div class="package-card-footer">
+                        <div class="footer-guarantee">
+                            <span class="guarantee-icon">★</span>
+                            <span>FAST TURNAROUND &amp; EXPERT EXECUTION</span>
                         </div>
-                        
-                        <div class="input-group">
-                            <label data-i18n="sim_label_get">Vous obtenez environ</label>
-                            <div class="input-row">
-                                <input type="text" id="amount-output" readonly>
-                                <select id="currency-to"></select>
-                            </div>
-                        </div>
-                        
-                        <div class="result-box">
-                            <span data-i18n="sim_rate_applied">Taux appliqué :</span>
-                            <strong id="rate-display">--</strong>
+                        <div>
+                            <span class="swiss-label">CH 2026 / GROOWTH SPEC</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Rates Section -->
-        <section id="taux" class="rates-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="rates_title">Nos Taux de Change</h2>
-                    <p data-i18n="rates_desc" style="margin-top: 1rem; font-weight: 600; max-width: 800px; margin-inline: auto;">Nos taux sont régulièrement mis à jour pour vous proposer des tarifs inégalables. Bénéficiez des meilleures conditions du marché.</p>
+    <!-- ====== Process Section (3-Step Swiss Process) ====== -->
+    <section id="process" class="section-padding">
+        <div class="container">
+            <div class="swiss-header">
+                <div class="swiss-header-left">
+                    <span>// 04. STREAMLINED EXECUTION</span>
+                    <h2>HOW WE LAUNCH YOUR BRAND.</h2>
                 </div>
-                <div class="rates-table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th data-i18n="table_currency">Devise</th>
-                                <th data-i18n="table_buy">Achat (Nous achetons)</th>
-                                <th data-i18n="table_sell">Vente (Nous vendons)</th>
-                            </tr>
-                        </thead>
-                        <tbody id="rates-table-body">
-                            <!-- JS will populate -->
-                        </tbody>
-                    </table>
+                <div class="swiss-header-right">
+                    <p>No wasted time. We move fast so you can start winning more estimates right away.</p>
                 </div>
             </div>
-        </section>
 
-        <!-- USPs Section -->
-        <section id="avantages" class="usps-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="usp_title">Pourquoi nous choisir ?</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div>
+                        <span class="swiss-label">STEP ONE</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-num-large">01.</div>
+                        <h3>Book Discovery Call</h3>
+                        <p>Click the link to book a quick, 15-minute alignment call with our founder. We discuss your local service area and core services.</p>
+                    </div>
                 </div>
-                <div class="usps-grid">
-                    <div class="usp-card">
-                        <img src="Assets/2mars-exchange-competitive-transparent-rates-currency-casablanca.webp" alt="Taux compétitifs" class="usp-img">
-                        <div class="usp-content">
-                            <h3 data-i18n="usp_1_title">Taux de change compétitifs et transparents</h3>
-                            <p data-i18n="usp_1_desc">2MARS Exchange propose des taux attractifs pour l’achat et la vente de devises, avec une transparence totale sur les opérations et sans frais cachés.</p>
-                        </div>
+
+                <div class="process-step">
+                    <div>
+                        <span class="swiss-label">STEP TWO</span>
                     </div>
-                    <div class="usp-card">
-                        <img src="Assets/2mars-exchange-licensed-bank-al-maghrib-secure-bureau-de-change.webp" alt="Agréé Bank Al-Maghrib" class="usp-img">
-                        <div class="usp-content">
-                            <h3 data-i18n="usp_2_title">Agréé par Bank Al-Maghrib</h3>
-                            <p data-i18n="usp_2_desc">La société garantit des transactions sécurisées et conformes à la réglementation marocaine grâce à son agrément officiel.</p>
-                        </div>
+                    <div class="step-content">
+                        <div class="step-num-large">02.</div>
+                        <h3>We Build Everything</h3>
+                        <p>Once your $150 deposit is placed, our team gets to work building your logo, custom website, copywriting, social templates, and ad campaigns.</p>
                     </div>
-                    <div class="usp-card">
-                        <img src="Assets/2mars-exchange-fast-service-local-expertise-casablanca.webp" alt="Service Rapide" class="usp-img">
-                        <div class="usp-content">
-                            <h3 data-i18n="usp_3_title">Service rapide et expertise locale</h3>
-                            <p data-i18n="usp_3_desc">Grâce à une équipe expérimentée et un service efficace, 2MARS Exchange accompagne particuliers et professionnels avec réactivité.</p>
-                        </div>
+                </div>
+
+                <div class="process-step">
+                    <div>
+                        <span class="swiss-label">STEP THREE</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-num-large">03.</div>
+                        <h3>Launch &amp; Scale</h3>
+                        <p>You review and approve the deliverables, pay the remaining $150 balance, and launch your brand to dominate your local tree service market.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Reservation Steps Section -->
-        <section id="reservation-steps" style="padding: 6rem 0; background-color: var(--white); border-bottom: var(--brutal-border);">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="res_steps_title">Réservez vos devises en 3 étapes</h2>
-                    <p data-i18n="res_steps_desc" style="color: var(--black); font-weight: 600; margin-top: 1rem; max-width: 800px; margin-inline: auto;">Effectuez votre demande de réservation de devises rapidement et en toute simplicité.</p>
-                </div>
-                <div class="steps-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                    <div class="card step-card" style="background: var(--bg-color); padding: 2rem; border: var(--brutal-border); box-shadow: 6px 6px 0 var(--black);">
-                        <div class="step-pill" data-i18n="res_step1_pill">🧭 Étape 1</div>
-                        <h3 data-i18n="res_step1_title" style="color: var(--blue); margin-bottom: 1rem;">Saisissez vos informations</h3>
-                        <p data-i18n="res_step1_desc" style="font-weight: 600;">Renseignez vos coordonnées et vos informations personnelles.</p>
-                    </div>
-                    <div class="card step-card" style="background: var(--bg-color); padding: 2rem; border: var(--brutal-border); box-shadow: 6px 6px 0 var(--black);">
-                        <div class="step-pill" data-i18n="res_step2_pill">💰 Étape 2</div>
-                        <h3 data-i18n="res_step2_title" style="color: var(--blue); margin-bottom: 1rem;">Choisissez le montant</h3>
-                        <p data-i18n="res_step2_desc" style="font-weight: 600;">Indiquez le montant de devises que vous souhaitez réserver.</p>
-                    </div>
-                    <div class="card step-card" style="background: var(--bg-color); padding: 2rem; border: var(--brutal-border); box-shadow: 6px 6px 0 var(--black);">
-                        <div class="step-pill" data-i18n="res_step3_pill">📅 Étape 3</div>
-                        <h3 data-i18n="res_step3_title" style="color: var(--blue); margin-bottom: 1rem;">Sélectionnez la date de retrait</h3>
-                        <p data-i18n="res_step3_desc" style="font-weight: 600;">Choisissez la date à laquelle vous souhaitez retirer vos devises.</p>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 4rem;">
-                    <a href="reservation.html" class="btn btn-primary" data-i18n="res_steps_btn">Réserver maintenant</a>
-                </div>
+    <!-- ====== Final Punchy Call to Action ====== -->
+    <section id="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>READY TO DOMINATE YOUR LOCAL TREE SERVICE MARKET?</h2>
+                <p>Book your discovery call today. Let's build a brand that commands respect and wins high-ticket tree jobs.</p>
+                <a href="https://cal.com/haythem-rais/discovery-call" class="btn btn-white-punchy" target="_blank" rel="noopener noreferrer">
+                    BOOK YOUR DISCOVERY CALL NOW ↗
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Reviews Section -->
-        <section class="reviews-section" style="padding: 6rem 0; background-color: var(--white); border-bottom: var(--brutal-border);">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="reviews_title">Avis de nos clients</h2>
-                </div>
-                <div class="reviews-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <a href="https://maps.app.goo.gl/7TmA2mo17qUAzKdv9" target="_blank" class="card review-card" style="background: var(--bg-color); text-decoration: none; color: inherit; display: block;">
-                        <div style="display: flex; gap: 0.5rem; color: #fbbf24; margin-bottom: 1rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <p data-i18n="review_1">"Le meilleur taux que j'ai pu trouver à Casablanca ! Le service est très rapide et transparent, je recommande vivement."</p>
-                        <p style="font-weight: 700; margin-top: 1rem; font-size: 1rem;">- Youssef A.</p>
-                    </a>
-                    <a href="https://maps.app.goo.gl/7TmA2mo17qUAzKdv9" target="_blank" class="card review-card" style="background: var(--bg-color); text-decoration: none; color: inherit; display: block;">
-                        <div style="display: flex; gap: 0.5rem; color: #fbbf24; margin-bottom: 1rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <p data-i18n="review_2">"Professionalisme au top. Aucune commission cachée, j'ai eu exactement le montant affiché sur le site."</p>
-                        <p style="font-weight: 700; margin-top: 1rem; font-size: 1rem;">- Sarah M.</p>
-                    </a>
-                    <a href="https://maps.app.goo.gl/7TmA2mo17qUAzKdv9" target="_blank" class="card review-card" style="background: var(--bg-color); text-decoration: none; color: inherit; display: block;">
-                        <div style="display: flex; gap: 0.5rem; color: #fbbf24; margin-bottom: 1rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <p data-i18n="review_3">"Excellent accueil. C'est rassurant de passer par un bureau agréé. L'équipe est très sérieuse."</p>
-                        <p style="font-weight: 700; margin-top: 1rem; font-size: 1rem;">- Kamal T.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Location & Contact -->
-        <section id="contact" class="location-section">
-            <div class="container location-grid">
-                <div class="location-info">
-                    <div class="section-header" style="text-align: left;">
-                        <h2 data-i18n="contact_title">Infos Pratiques</h2>
-                    </div>
-                    <div class="info-card">
-                        <h3 data-i18n="hours_title">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            Horaires d'ouverture
-                        </h3>
-                        <ul class="info-list">
-                            <li>Du lundi au vendredi: de 8:30h à 20:30h</li>
-                            <li>Samedi : de 8:30h à 18h</li>
-                        </ul>
-                    </div>
-                    <div class="info-card">
-                        <h3 data-i18n="address_title">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                            Adresse
-                        </h3>
-                        <p>Quartier des Hôpitaux, magasin 2,<br>130 Av. 2 Mars, Casablanca 20250</p>
-                    </div>
-                    <div class="info-card">
-                        <h3 data-i18n="contact_info_title">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            Contacts
-                        </h3>
-                        <ul class="info-list">
-                            <li>07 70 18 18 18</li>
-                            <li>05 22 86 34 80</li>
-                            <li>contact@bureaudechangecasa.com</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://maps.google.com/maps?q=2MARS%20Exchange,%20Casablanca&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQs Section -->
-        <section class="faq-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="faq_title">Questions Fréquentes</h2>
-                </div>
-                <div class="faq-container" id="faq-container">
-                    <!-- JS will populate FAQs -->
-                </div>
-            </div>
-        </section>
-    </main>
-
+    <!-- ====== Footer ====== -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <img src="Assets/Logo.svg" alt="2MARS Exchange" class="footer-logo">
-                    <p style="font-size: 1rem;">Bureau de change agréé par Bank Al-Maghrib. Service rapide, fiable et digital.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/change.2mars/" target="_blank" class="social-icon" aria-label="Instagram">
-                            <img src="Assets/instagram-logo.svg" alt="Instagram">
-                        </a>
-                        <a href="https://www.facebook.com/change2mars/" target="_blank" class="social-icon" aria-label="Facebook">
-                            <img src="Assets/facebook-logo.svg" alt="Facebook">
-                        </a>
-                        <a href="https://wa.me/212770181818" target="_blank" class="social-icon" aria-label="Whatsapp">
-                            <img src="Assets/whatsapp-logo.svg" alt="Whatsapp">
-                        </a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        GROOWTH <span class="logo-badge">AGENCY</span>
+                    </a>
+                    <p>Modern Digital Agency Specialized in Helping Tree Service Businesses Grow via Solid Branding, Visual Identity, Positioning, and Great Copywriting.</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#positioning">Positioning</a></li>
+                            <li><a href="#services">What We Build</a></li>
+                            <li><a href="#package">The $300 Package</a></li>
+                            <li><a href="#process">How It Works</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Action</h4>
+                        <ul>
+                            <li><a href="https://cal.com/haythem-rais/discovery-call" target="_blank" rel="noopener noreferrer">Book Discovery Call ↗</a></li>
+                            <li><a href="#package">Claim $300 Package</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Liens Rapides</h4>
-                    <a href="index.html">Accueil</a>
-                    <a href="nos-agences.html">Nos agences</a>
-                    <a href="index.html#simulateur">Simulateur</a>
-                    <a href="index.html#taux">Taux de change</a>
-                    <a href="dotation-ir.html">Dotation IR</a>
-                    <a href="consultation.html">Consultation Dotation</a>
-                    <a href="reservation.html">Réservation de devises</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Informations</h4>
-                    <p style="font-size: 1rem; margin-bottom: 0.5rem;">07 70 18 18 18</p>
-                    <p style="font-size: 1rem; margin-bottom: 0.5rem;">contact@bureaudechangecasa.com</p>
-                    <p style="font-size: 1rem;">130 Av. 2 Mars, Casablanca</p>
-                </div>
             </div>
+
             <div class="footer-bottom">
-                &copy; 2026 2MARS Exchange. Tous droits réservés.
+                <span>&copy; 2026 GROOWTH AGENCY. ALL RIGHTS RESERVED.</span>
+                <span>SWISS INTERNATIONAL STYLE &amp; MODERN AGENCY SPEC</span>
             </div>
         </div>
     </footer>
 
+    <!-- Script for mobile menu -->
     <script src="script.js"></script>
 </body>
 </html>
