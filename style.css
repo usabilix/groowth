@@ -337,25 +337,66 @@ p.lead {
 }
 
 /* --- Hero Section --- */
+/* --- Hero Section (Dark Mode Test) --- */
 #hero {
   padding-top: calc(var(--nav-height) + 48px);
   padding-bottom: 64px;
   position: relative;
   overflow: hidden;
-  background-color: var(--white);
+  background-color: #0A0A0A;
   background-image:
-    radial-gradient(circle at 80% 20%, rgba(22, 163, 74, 0.12), transparent 45%),
-    radial-gradient(circle at 15% 85%, rgba(56, 189, 248, 0.08), transparent 45%),
-    radial-gradient(rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+    radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.22), transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(56, 189, 248, 0.12), transparent 45%),
+    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 24px 24px;
+  border-bottom: 2px solid var(--border-dark);
 }
 
 .hero-badge-row {
   margin-bottom: 24px;
 }
 
+#hero .swiss-label {
+  background-color: var(--vivid-yellow);
+  color: var(--black);
+  border-color: var(--black);
+}
+
 #hero h1 {
   margin-bottom: 20px;
+  color: var(--white);
+}
+
+#hero .hero-sub {
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.5;
+  color: #CCCCCC;
+  font-weight: 400;
+  max-width: 680px;
+  margin-bottom: 32px;
+}
+
+#hero .btn-primary {
+  background-color: var(--accent-green);
+  color: var(--white);
+  border-color: var(--accent-green);
+}
+
+#hero .btn-primary:hover {
+  background-color: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+#hero .btn-secondary {
+  background-color: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+
+#hero .btn-secondary:hover {
+  background-color: var(--white);
+  color: var(--black);
 }
 
 /* --- Highlight Underline --- */
@@ -376,6 +417,7 @@ p.lead {
 }
 
 .brush-svg path {
+  stroke: #22C55E;
   stroke-dasharray: 400;
   stroke-dashoffset: 400;
   animation: drawBrush 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
