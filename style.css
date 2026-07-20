@@ -881,6 +881,8 @@ p.lead {
 }
 
 .step-icon-wrap {
+  flex: 0 0 52px;
+  -webkit-flex: 0 0 52px;
   width: 52px;
   height: 52px;
   min-width: 52px;
@@ -1526,6 +1528,8 @@ footer {
   }
 
   .step-icon-wrap {
+    flex: 0 0 48px;
+    -webkit-flex: 0 0 48px;
     flex-shrink: 0;
     margin-bottom: 0;
     width: 48px;
