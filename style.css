@@ -511,9 +511,11 @@ p.lead {
   border-radius: var(--radius-lg);
   background: var(--white);
   overflow: hidden;
-  margin: 0 32px;
+  margin: 56px auto 0;
   max-width: var(--container-max);
+  width: calc(100% - 64px);
   box-sizing: border-box;
+  box-shadow: 6px 6px 0px var(--black);
 }
 
 @media (min-width: 1384px) {
