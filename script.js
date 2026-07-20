@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var mobileLinks = document.querySelectorAll('.mobile-link');
 
   if (menuToggle && mobileMenu) {
+    var arrowSvg = '<svg class="btn-icon-arrow menu-arrow-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>';
+
     menuToggle.addEventListener('click', function () {
       var isOpen = mobileMenu.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', isOpen);
       mobileMenu.setAttribute('aria-hidden', !isOpen);
-      menuToggle.innerHTML = isOpen ? 'Close &times;' : 'Menu &darr;';
+      menuToggle.innerHTML = isOpen ? 'Close &times;' : 'Menu ' + arrowSvg;
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mobileMenu.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', 'false');
         mobileMenu.setAttribute('aria-hidden', 'true');
-        menuToggle.innerHTML = 'Menu &darr;';
+        menuToggle.innerHTML = 'Menu ' + arrowSvg;
         document.body.style.overflow = '';
       });
     });
