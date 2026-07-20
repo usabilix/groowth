@@ -503,25 +503,17 @@ p.lead {
   gap: 16px;
 }
 
-/* --- Swiss Data Strip --- */
 .swiss-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border: 2px solid var(--border-dark);
+  border: 2.5px solid var(--black);
   border-radius: var(--radius-lg);
   background: var(--white);
   overflow: hidden;
-  margin: 56px auto 0;
-  max-width: var(--container-max);
-  width: calc(100% - 64px);
-  box-sizing: border-box;
+  margin-top: 48px;
+  width: 100%;
   box-shadow: 6px 6px 0px var(--black);
-}
-
-@media (min-width: 1384px) {
-  .swiss-strip {
-    margin: 0 auto;
-  }
+  box-sizing: border-box;
 }
 
 .strip-item {
