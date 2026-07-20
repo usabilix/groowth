@@ -395,6 +395,10 @@ p.lead {
   cursor: pointer;
 }
 
+.mobile-menu {
+  display: none;
+}
+
 /* --- Hero Section --- */
 /* --- Hero Section (Dark Mode Test) --- */
 #hero {
