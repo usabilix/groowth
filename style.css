@@ -238,23 +238,86 @@ p.lead {
   transform: translate(3px, -3px);
 }
 
-/* --- Navigation --- */
+/* --- Navigation (Dark at Top, Light on Scroll) --- */
 #navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: var(--nav-height);
-  background-color: var(--bg-page);
-  border-bottom: 2px solid var(--border-dark);
+  background-color: #0A0A0A;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.12);
   z-index: 1000;
   display: flex;
   align-items: center;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+#navbar .logo {
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+#navbar .nav-links a {
+  color: #CCCCCC;
+  transition: color 0.3s ease;
+}
+
+#navbar .nav-links a:hover {
+  color: var(--vivid-yellow);
+}
+
+#navbar .btn-nav {
+  background-color: var(--accent-green);
+  color: var(--white);
+  border-color: var(--accent-green);
+  transition: all 0.3s ease;
+}
+
+#navbar .btn-nav:hover {
+  background-color: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+#navbar .menu-toggle {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+/* Scrolled State (White Background) */
 #navbar.scrolled {
   background-color: var(--white);
+  border-bottom-color: var(--border-dark);
+}
+
+#navbar.scrolled .logo {
+  color: var(--black);
+}
+
+#navbar.scrolled .nav-links a {
+  color: var(--body-color);
+}
+
+#navbar.scrolled .nav-links a:hover {
+  color: var(--accent-green);
+}
+
+#navbar.scrolled .btn-nav {
+  background-color: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+#navbar.scrolled .btn-nav:hover {
+  background-color: var(--accent-green);
+  border-color: var(--accent-green);
+  color: var(--white);
+}
+
+#navbar.scrolled .menu-toggle {
+  color: var(--black);
+  border-color: var(--black);
 }
 
 .nav-container {
@@ -306,10 +369,6 @@ p.lead {
   letter-spacing: 0.04em;
   color: var(--body-color);
   transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-  color: var(--accent-green);
 }
 
 .nav-cta-wrap {
