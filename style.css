@@ -850,6 +850,17 @@ p.lead {
 
 .pkg-price-wrap {
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.pkg-launch-label {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--vivid-yellow);
+  text-transform: uppercase;
+  margin-bottom: -5px;
 }
 
 .pkg-price {
@@ -861,13 +872,14 @@ p.lead {
   display: block;
 }
 
-.pkg-terms {
-  font-size: 0.9rem;
+.pkg-portfolio-note {
+  font-size: 0.95rem;
   color: #CCCCCC;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-top: 8px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 16px;
+  max-width: 320px;
+  text-align: right;
   display: block;
 }
 
