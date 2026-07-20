@@ -542,8 +542,23 @@ p.lead {
 }
 
 .strip-icon {
-  color: var(--accent-green);
   flex-shrink: 0;
+}
+
+.strip-item:nth-child(1) .strip-icon {
+  color: #22C55E;
+}
+
+.strip-item:nth-child(2) .strip-icon {
+  color: #F59E0B;
+}
+
+.strip-item:nth-child(3) .strip-icon {
+  color: #38BDF8;
+}
+
+.strip-item:nth-child(4) .strip-icon {
+  color: #A855F7;
 }
 
 .strip-label {
