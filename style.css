@@ -507,42 +507,34 @@ p.lead {
   gap: 16px;
 }
 
+/* --- Swiss Data Strip (Dark Theme Aligned) --- */
 .swiss-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border: 2.5px solid var(--black);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-lg);
-  background: var(--white);
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   overflow: hidden;
   margin-top: 48px;
   width: 100%;
-  box-shadow: 6px 6px 0px var(--black);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
 }
 
 .strip-item {
-  padding: 28px 32px;
-  border-right: 2px solid var(--border-dark);
+  padding: 24px 28px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
   gap: 6px;
-  transition: background-color 0.2s ease;
+  background-color: transparent;
+  transition: background-color 0.25s ease;
 }
 
-.strip-item:nth-child(1) {
-  background-color: #ECFDF5;
-}
-
-.strip-item:nth-child(2) {
-  background-color: #FEFCE8;
-}
-
-.strip-item:nth-child(3) {
-  background-color: #EFF6FF;
-}
-
-.strip-item:nth-child(4) {
-  background-color: #FAF5FF;
+.strip-item:hover {
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 .strip-item:last-child {
@@ -550,29 +542,21 @@ p.lead {
 }
 
 .strip-icon {
-  color: var(--black);
+  color: var(--accent-green);
   flex-shrink: 0;
 }
 
 .strip-label {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--black);
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-}
-
-.strip-label {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--black);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
   text-transform: uppercase;
   letter-spacing: -0.02em;
 }
 
 .strip-desc {
-  font-size: 0.9rem;
-  color: var(--muted);
+  font-size: 0.85rem;
+  color: #A0A0A0;
 }
 
 /* --- Section Headers (Swiss Editorial) --- */
